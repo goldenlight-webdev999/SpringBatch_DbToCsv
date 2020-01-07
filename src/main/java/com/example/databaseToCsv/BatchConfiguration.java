@@ -47,8 +47,8 @@ public class BatchConfiguration {
     public JdbcCursorItemReader<User> reader(@Value("#{jobParameters['Count']}") String count){
         JdbcCursorItemReader<User> reader = new JdbcCursorItemReader<User>();
         reader.setDataSource(dataSource);
-        final int limit = 100;
-        final int offset = Integer.parseInt(count) * 100;
+        final int limit = 10000;
+        final int offset = Integer.parseInt(count) * 10000;
         reader.setSql("SELECT * FROM `user` WHERE 1 LIMIT "+ offset + "," + limit);
         reader.setRowMapper(new UserRowMapper());
 

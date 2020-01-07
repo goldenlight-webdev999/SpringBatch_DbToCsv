@@ -26,7 +26,7 @@ public class DatabaseToCsvApplication {
 	@Autowired
 	Job job;
 
-	@Scheduled(fixedRate = 5000)
+	@Scheduled(fixedRate = 60000)
 	public void perform() throws Exception
 	{
 		if (count > 9) return;
